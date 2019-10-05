@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Game</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<body>
+<h1>Start game </h1>
+<h3><%=hello %></h3>
+
+<form action="/hi" method="post">
+    <label>Enter your number:</label>
+    <input id="userNumber" type="number" name="UserNumber">
+    <input  id="sendData" type="button" value="Send">
+</form>
+
+
+</body>
+</html>
+<script>
+    $("#sendData").on("click" , function(){
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:3000",
+            data: { number: $("#userNumber").val()}
+        })
+            .done(function( msg ) {
+                alert( "Data Saved: " + msg );
+            });
+
+
+    })
+</script>
