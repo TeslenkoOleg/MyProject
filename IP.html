@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<input type="button" id="btn" value="GetIP">
+
+<script>
+    $('#btn').on('click', function () {
+        //var IP ={data:58};
+        $.getJSON("https://api.ipify.org/?format=json", function(e) {
+
+            $.ajax({
+            type: "POST",
+            url: "http://localhost:3000/sendIP",
+            data: JSON.stringify(e)
+            }).done(function (msg) {
+            alert(msg)
+            })
+    })
+    });
+</script>
+</body>
+</html>

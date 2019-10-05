@@ -1,0 +1,163 @@
+My name is Petro!
+METANIT.COM
+Сайт о программировании
+
+C#/.NET JAVA WEB PYTHON C/C++ SQL MONGODB GO VB.NET SWIFT KOTLIN DART
+Отправка статических файлов
+Последнее обновление: 21.04.2019
+
+Вместо того, чтобы определять код, который получает пользователь, напрямую в файле сервера, гораздо удобнее вынести все в отдельный html-файл. Рассмотрим, как мы можем отправлять статические файла, те же файлы html.
+
+Определим новый каталог проекта. Определим в нем основной файл приложения app.js. Для статических файлов создадим отдельную папку public, в которую добавим два файла index.html и about.html. В итоге проект будет выглядеть следующим образом:
+
+app.js
+
+public
+
+about.html
+
+index.html
+
+В файле index.html определим какой-нибудь простейший html-код:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Главная</h1>
+</body>
+<html>
+Аналогично определим код в файле about.html:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+<!DOCTYPE html>
+<html>
+<head>
+    <title>О сайте</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>О сайте</h1>
+</body>
+<html>
+Наша задача будет заключаться в том, чтобы отправить их содержимое пользователю. Для этого поместим в файл app.js следующий код:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+const http = require("http");
+const fs = require("fs");
+
+http.createServer(function(request, response){
+
+    console.log(`Запрошенный адрес: ${request.url}`);
+    if(request.url.startsWith("/public/")){
+
+        // получаем путь после слеша
+        const filePath = request.url.substr(1);
+        fs.readFile(filePath, function(error, data){
+
+            if(error){
+
+                response.statusCode = 404;
+                response.end("Resourse not found!");
+            }
+            else{
+                response.setHeader("Content-Type", "text/html");
+                response.end(data);
+            }
+        })
+    }
+    else{
+        // во всех остальных случаях отправляем строку hello world!
+        response.end("Hello World!");
+    }
+}).listen(3000);
+Если запрошенный адрес начинается с "/public/", то с помощью метода fs.readFile() считываем нужный файл по пути и отправляем считанные данные клиенту. В остальных случаях отдаем строку "Hello World!".
+
+Запустим приложение и в браузере обратимся по адресу "http://localhost:3000":
+
+Статические файлы в Node.js
+Затем обратимся по адресу "http://localhost:3000/public/index.html":
+
+index.html в Node.js
+Аналогично мы можем обратиться по адресу "http://localhost:3000/public/about.html":
+
+index.html в Node.js
+НазадСодержаниеВперед
+
+
+
+Помощь сайту
+WebMoney
+R378451176208
+Z280152397659
+U210796482817
+Yandex-деньги
+410011174743222
+PayPal
+metanit22@mail.ru
+Глава 1. Введение в Node.js
+Глава 2. Основы работы с Node.js
+Глава 3. Сервер
+Создание сервера
+Отправка файлов
+Шаблоны
+Глава 4. Express
+Глава 5. Тестирование
+Глава 6. Node.js и MongoDB
+Глава 7. MySQL
+Глава 8. Sequelize
+Глава 9. Паттерн MVC
+Глава 10. Загрузка файлов
+Вконтакте| Twitter| Канал сайта на youtube| Помощь сайту
+Контакты для связи: metanit22@mail.ru
+
+Copyright © metanit.com, 2012-2019. Все права защищены.

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body style="background: beige">
+<input type="button" id="Restart" value="Start new game">
+<center>
+    <form style="background: beige; position: center" >
+        <h3>The game "GUESS NUMBER"</h3>
+        <p>You have to guess my random number </p>
+        <label>Enter number:</label>
+        <input type="number" id="num">
+        <input type="button" id="btn" value="Send">
+        <br>
+        <span id="counter" style="color: darkblue">You have 7 try</span>
+        <br>
+        <span id="status" style="color: red"></span>
+        <br>
+
+
+
+
+    </form>
+</center>
+<script>
+    var counter=7;
+
+    $("#btn").on('click', function () {
+        if (Number.isFinite(parseInt($('#num').val()))===true) {
+
+
+            counter--;
+            $('#counter').html('You have ' + counter + ' try');
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:3000/data',
+                data: JSON.stringify({data: $('#num').val()})
+            }).done(function (msg) {
+                // alert(msg);
+                $('#status').html(msg);
+
+                if ($('#status').html()===str){
+                    alert("Congratulation! You are winner!");
+                    var NewGame = confirm('Do you want to play again ?');
+                    if (NewGame === true) {
+                        document.location.reload();}
+                }
+
+
+
+            });
+        } else {
+            alert('You must to enter a number!')
+        }
+        $('#num').val('');
+        var str = 'You are won!';
+
+
+
+
+
+        if (counter===0 ){
+            //$('#status').html('GAME OVER! You Lose!');
+            setTimeout(function () {
+                alert('GAME OVER!');
+
+                var NewGame = confirm('Do you want to play again ?');
+                if (NewGame === true) {
+                    document.location.reload();
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:3000/NewGame"
+                    }).done(function (msg) {
+                        alert(msg)
+                    })
+
+                }
+            }, 1000);
+            //var NewGame = confirm('Do you want to play again ?');
+
+        }
+
+    });
+$("#Restart").on('click', function () {
+    document.location.reload()
+})
+
+</script>
+</body>
+</html>

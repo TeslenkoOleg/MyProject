@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+
+
+    </script>
+</head>
+<body>
+<form>
+    <h1>Welcome to the best game!!!</h1>
+    <p>You have to guess my number!</p>
+
+    <label>Enter your number, please</label>
+    <input type="number" name="number" id="PL_number" >
+
+    <br />
+
+    <input type="button" name="button" id="btn" value="Send" >
+    <br />
+    <br>
+    <!--<span id="counter">You have 7 attempts. </span>-->
+    <br>
+    <span id="status" style="color: red"></span>
+    <br>
+
+</form>
+<script>
+    var counter = 7;
+$('#btn').on('click', function () {
+    //counter--;
+
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:3000/data",
+        data: JSON.stringify({data: $('#PL_number').val()})
+
+    }).done(function(msg){
+        alert(msg);
+        $('#status').val(msg)
+
+    });
+    $('#PL_number').val(' ');
+    /*$('#counter').html("You have "+counter +" attempts.");
+    if (counter===0){
+
+        alert('GAME OVER!')
+    }*/
+});
+
+
+</script>
+
+</body>
+</html>
