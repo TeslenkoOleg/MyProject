@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
-        @keyframes anim {
+        /*@keyframes anim {
             0% {
                 background-image: url("3.jpg");
 
@@ -20,14 +20,86 @@
                 background-image: url("3.jpg");
             }
 
-        }
-        #divName{
+        }*/
+        /*#divName{
             animation-name: anim;
             background-image: url("3.jpg");
             height: 100px;
             width: 300px;
             animation-duration: 6s;
             animation-iteration-count: infinite;
+        }*/
+@keyframes slide {
+    0%{
+        left: 0;
+
+    }
+    20%{
+        left: -20%;
+    }
+    40%{
+        left: -40%;
+    }
+    60%{
+        left: -60%;
+    }
+    80%{
+        left: -80%;
+    }
+    100%{
+        left: -100%;
+    }
+
+}
+        #slides{
+            position: relative;
+            top: 20px;
+            left: calc(50% - 350px);
+            width: 700px;
+            animation-name: slide;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+        }
+        #slides:hover{
+            animation-play-state: paused;
+        }
+        @keyframes slide2{
+            0%{
+                right: -50%;
+
+            }
+            20%{
+                left: -20%;
+            }
+            40%{
+                left: -40%;
+            }
+            60%{
+                left: -60%;
+            }
+            80%{
+                left: -80%;
+            }
+            100%{
+                left: -100%;
+            }
+
+        }
+        #slides2{
+            position: absolute;
+            top: 20px;
+            right: -50%;
+            width: 700px;
+            animation-name: slide2;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+        }
+        #slides:hover{
+            animation-play-state: paused;
         }
     </style>
 </head>
@@ -36,6 +108,20 @@
     <div class="container" id="divName">
 
 
+
+    </div>
+    <div id="slides" class="container" style="text-align: center; background-color: #7abaff" >
+        <img src="1.jpg" width=20% height="168">
+        <img src="2.jpg" width=20% height="168">
+        <img src="3.jpg" width=20% height="168">
+        <img src="12.jpg" width=20% height="168">
+
+    </div>
+    <div id="slides2" class="container" style="text-align: center; background-color: #7abaff" >
+        <img src="1.jpg" width=20% height="168">
+        <img src="2.jpg" width=20% height="168">
+        <img src="3.jpg" width=20% height="168">
+        <img src="12.jpg" width=20% height="168">
 
     </div>
 </div>
