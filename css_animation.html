@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        @keyframes anim {
+            0% {
+                background-image: url("3.jpg");
+
+            }
+            33%{
+                background-image: url("1.jpg");
+            }
+            66%{
+                background-image: url("2.jpg");
+
+            }
+            100%{
+                background-image: url("3.jpg");
+            }
+
+        }
+        #divName{
+            animation-name: anim;
+            background-image: url("3.jpg");
+            height: 100px;
+            width: 300px;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="container" id="divName">
+
+
+
+    </div>
+</div>
+</body>
+</html>
