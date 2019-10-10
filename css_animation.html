@@ -29,7 +29,7 @@
             animation-duration: 6s;
             animation-iteration-count: infinite;
         }*/
-@keyframes slide {
+/*@keyframes slide {
     0%{
         left: 0;
 
@@ -57,7 +57,7 @@
             left: calc(50% - 350px);
             width: 700px;
             animation-name: slide;
-            animation-duration: 10s;
+            animation-duration: 5s;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
             animation-direction: normal;
@@ -100,7 +100,7 @@
         }
         #slides:hover{
             animation-play-state: paused;
-        }
+        }*/
     </style>
 </head>
 <body>
@@ -111,19 +111,42 @@
 
     </div>
     <div id="slides" class="container" style="text-align: center; background-color: #7abaff" >
+        <img class="MySlides" src="1.jpg" width=20% height="168">
+        <img class="MySlides" src="2.jpg" width=20% height="168">
+        <img class="MySlides" src="3.jpg" width=20% height="168">
+        <img class="MySlides" src="12.jpg" width=20% height="168">
+
+
+    </div>
+    <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+    <!--<div id="slides2" class="container" style="text-align: center; background-color: #7abaff" >
         <img src="1.jpg" width=20% height="168">
         <img src="2.jpg" width=20% height="168">
         <img src="3.jpg" width=20% height="168">
         <img src="12.jpg" width=20% height="168">
 
-    </div>
-    <div id="slides2" class="container" style="text-align: center; background-color: #7abaff" >
-        <img src="1.jpg" width=20% height="168">
-        <img src="2.jpg" width=20% height="168">
-        <img src="3.jpg" width=20% height="168">
-        <img src="12.jpg" width=20% height="168">
-
-    </div>
+    </div>-->
 </div>
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("MySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+    }
+</script>
 </body>
 </html>
