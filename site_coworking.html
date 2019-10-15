@@ -9,193 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Коворкинг</title>
-    <style type="text/css">
-        body, html{
-            height: 98%;
-            /*cursor: auto;*/
-            font-family: "Times New Roman"
-
-
-
-        }
-
-        #navbrand{
-            cursor: pointer;
-
-        }
-        #bgimg {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('cover.jpg');
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        #navbarList {
-
-            text-align: center;
-            font-size: 20px;
-            position: absolute;
-            right: 30px;
-            cursor: pointer;
-        }
-        #navbarList:active{
-            color: #3ECCB5;
-
-        }
-        #navbarList a:hover{
-            color: #3ECCB5;
-
-        }
-
-        #divCowork{
-            position: relative;
-
-            top: 40%;
-            font-family: "Times New Roman";
-            font-weight: bold;
-
-        }
-        #cowork{
-            color: white;
-            text-align: center;
-            line-height: 0.5em;
-            font-weight: bold;
-            text-shadow: 3px 3px 4px black;
-
-            font-size: 60px;
-            font-family: "Times New Roman";
-            letter-spacing: 0.5em;
-        }
-        #btn_more{
-            font-size: 20px;
-            letter-spacing: 5px;
-            background-color: #3ECCB5;
-            color: white;
-        }
-        #btn_more:hover{
-            background-color: #0f6674;
-        }
-
-        #secondImg{
-            position: relative;
-            height: 750px;
-            margin: 0 auto;
-
-            background-image: url("cowork2.jpg");
-            /*height: 100%;*/
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        #about{
-            position: relative;
-            top: 150px;
-            /*left: 35%;*/
-            background-color: white;
-            width: 600px;
-            height: 500px;
-            margin: 0 auto;
-        }
-
-        #community{
-            margin: 0 auto;
-            padding: 25px;
-            text-align: center;
-            height: 250px;
-        }
-        #slider{
-            width: 100%;
-        }
-        #imgLine{
-            width: 100%;
-
-            padding: 10px;
-        }
-        #comDiv{
-            padding: 0;
-            width: 100%;
-            background-size: cover;
-
-        }
-        .carousel-item{
-            width: 100%;
-            height: 100%;
-        }
-        #spaces{
-            color: white;
-
-            margin-top: 2px;
-            margin-bottom: 2px;
-            background-color: #3ECCB5;
-            text-align: center;
-            padding: 40px;
-        }
-        #ImgSpaces{
-            margin: 0;
-            padding: 0;
-            margin-bottom:20px
-
-        }
-        #space_1{
-            display: block;
-            position: relative;
-            padding: 0;
-            background-image: url("space_1.jpg");
-            background-size: cover;
-            height: 300px;
-            z-index: 1;
-        }
-        #space_2{
-            padding: 0;
-            background-image: url("space_2.jpg");
-            background-size: cover;
-            height: 300px;
-        }
-        #space_3{
-            padding: 0;
-            background-image: url("space_3.jpg");
-            background-size: cover;
-            height: 300px;
-        }
-        #space_4{
-            padding: 0;
-            background-image: url("space_4.jpg");
-            background-size: cover;
-            height: 300px;
-        }
-        #oneSpace{
-            color: white;
-            position: absolute;
-
-
-
-        }
-        .space {
-            display: block;
-            position: relative;
-            cursor: pointer;
-
-        }
-        .space:after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.5);  opacity: 0; }
-
-        .space:hover:after { opacity: 1; }
-        #clubDiv{
-            height: 400px;
-            background-color: whitesmoke;
-            text-align: center;
-            padding: 20px;
-
-        }
-
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="css_coworking.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 <body>
-<nav  class="navbar navbar-expand-md navbar-expand-lg navbar-dark sticky-top bg-dark" >
+<nav  class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark fixed-top" >
     <a id="navbrand" class="navbar-brand" style="color: white; font-size: 30px">Вместе<b style="color: #3ECCB5">.</b></a>
     <div id="navbarList">
         <div class="navbar-collapse-navbar" >
@@ -213,7 +31,10 @@
                     <a href="#spaces" class="nav-link">Площадки</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Клубная карта</a>
+                    <a href="#clubCard" class="nav-link">Клубная карта</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Контакты</a>
                 </li>
 
             </ul>
@@ -349,7 +170,7 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div id="clubCard" class="container-fluid">
     <div class="row">
         <div class="col-md-12" id="clubDiv">
             <div id="clubHeader">
@@ -358,23 +179,66 @@
             <p>
                 Вступите в клуб и получите:
             </p>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="comp.svg" width="60" height="60"/>
-                        Оборудованный рабочий стол
+
+            <div class="container-fluid">
+                <div class="row" style="margin-bottom: 30px; margin-top:50px">
+                    <div class="col-md-4" >
+                        <div>
+                        <img class="svgCall" src="code.svg" /></div>
+                        <div>Оборудованный рабочий стол</div>
+                    </div>
+                    <div class="col-md-4" >
+                        <div>
+                        <img class="svgCall" src="team.svg" /></div>
+                        <div>Один час аренды переговорной бесплатно </div>
+
+
+                    </div>
+                    <div class="col-md-4" >
+                        <div>
+                        <img  class="svgCall" src="wine.svg" /></div>
+                        <div>Бесплатный алкоголь каждую пятницу в 18:00</div>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="col-md-4" >
+                        <div>
+                        <img class="svgCall" src="lightbulb.svg" /></div>
+                        <div>Доступ в сообщество креативных профессионалов</div>
                     </div>
                     <div class="col-md-4">
-                        <img src="comp.svg" width="60" height="60"/>
-                        Оборудованный рабочий стол
+                        <div>
+                       <img class="svgCall" src="modem.svg" /></div>
+
+                        <div>Безлимитный интернет</div>
                     </div>
-                    <div class="col-md-4">
-                        <img src="comp.svg" width="60" height="60"/>
-                        Оборудованный рабочий стол
+                    <div class="col-md-4" >
+                        <div>
+                        <img class="svgCall" src="call.svg" /></div>
+                        <div>
+                            Безлимитные звонки за границу
+                        </div>
                     </div>
                 </div>
 
             </div>
+        </div>
+    </div>
+
+</div>
+
+<div>
+    <div id="contacts" class="container-fluid">
+        <div>
+            <h1 >КАК НАС НАЙТИ</h1>
+
+
+        </div>
+        <div style="margin-top: 30px">
+
+            <h4>АДРЕС: УЛ. АРБАТ, 1А, МОСКВА, РОССИЯ</h4>
+
+            <h4>т. +7 123 456-78-90  |  INFO@MYSITE.RU</h4>
         </div>
     </div>
 

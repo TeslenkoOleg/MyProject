@@ -1,4 +1,4 @@
- body, html{
+body, html{
             height: 98%;
             /*cursor: auto;*/
             font-family: "Times New Roman"
@@ -103,6 +103,7 @@
             padding: 0;
             width: 100%;
             background-size: cover;
+
         }
         .carousel-item{
             width: 100%;
@@ -112,6 +113,7 @@
             color: white;
 
             margin-top: 2px;
+            margin-bottom: 2px;
             background-color: #3ECCB5;
             text-align: center;
             padding: 40px;
@@ -119,14 +121,17 @@
         #ImgSpaces{
             margin: 0;
             padding: 0;
+            margin-bottom:20px
 
         }
         #space_1{
+            display: block;
             position: relative;
             padding: 0;
             background-image: url("space_1.jpg");
             background-size: cover;
             height: 300px;
+            z-index: 1;
         }
         #space_2{
             padding: 0;
@@ -149,4 +154,43 @@
         #oneSpace{
             color: white;
             position: absolute;
+
+
+
+        }
+        .space {
+            display: block;
+            position: relative;
+            cursor: pointer;
+
+        }
+        .space:after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.5);  opacity: 0; }
+
+        .space:hover:after { opacity: 1; }
+        #clubDiv{
+            height: 400px;
+            background-color: whitesmoke;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        .svgCall{
+
+            position: relative;
+            left: 0px;
+            padding: 5px;
+
+            width: 50px;
+            height: 50px;
+        }
+        #contacts{
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('slide_3.jpg');
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: azure;
+            padding: 30px;
         }
