@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a24df2ca-7feb-4d95-84df-13563121af99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_coworking.html" beforeDir="false" afterPath="$PROJECT_DIR$/site_coworking.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +25,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
   </component>
   <component name="ProjectId" id="1YAWqcWrBoEsYt5v25uGBjzxB7b" />
   <component name="ProjectViewState">
@@ -139,6 +134,7 @@
       <workItem from="1572765149650" duration="738000" />
       <workItem from="1582386077740" duration="60000" />
       <workItem from="1582538051485" duration="19000" />
+      <workItem from="1585397108046" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="add files!">
       <created>1570376014606</created>
@@ -161,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571111338977</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add file to branch">
+      <created>1585397188941</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585397188941</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -178,9 +181,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add files!" />
-    <option name="LAST_COMMIT_MESSAGE" value="add files!" />
+    <MESSAGE value="add file to branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file to branch" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1585397185488">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585397185488" />
     <state x="1026" y="265" key="FileChooserDialogImpl" timestamp="1582538067554">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
